@@ -1,9 +1,9 @@
-import Header from "@/component/home/layout/header";
+
 import Image from "next/image";
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Footer from "@/component/home/layout/footer";
+import App_layout from "@/component/home/layout/layout/App-layout";
 
 function Testimonials() {
   useEffect(() => {
@@ -60,11 +60,11 @@ function Testimonials() {
 
   return (
     <div>
-      <Header />
-      <div className="bg-gradient-to-br from-purple-600 via-pink-500 to-orange-500 py-16">
+     <App_layout>
+      <div className="bg-gray-100 py-16">
         <div className="max-w-6xl mx-auto px-4 mt-28">
           <h2
-            className="text-center text-4xl font-extrabold text-white mb-12 tracking-wide"
+            className="text-center text-4xl font-extrabold text-blue-500 mb-12 tracking-wide"
             data-aos="fade-down"
           >
             What Our Clients Say
@@ -73,8 +73,8 @@ function Testimonials() {
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-br from-gray-200 via-gray-300 to-gray-400 p-8 
-                rounded-xl shadow-lg hover:bg-gradient-to-br hover:from-blue-400 hover:via-purple-500 hover:to-pink-500
+                className="bg-white border-4 border-white p-8 
+                rounded-xl shadow-lg hover:bg-gray-100 
                 hover:shadow-2xl transition-all duration-300"
                 data-aos="flip-left"
               >
@@ -84,7 +84,7 @@ function Testimonials() {
                     alt={testimonial.name}
                     height={100}
                     width={100}
-                    className="w-24 h-24 rounded-full object-cover border-4 border-orange-500 mb-6"
+                    className="w-24 h-24 rounded-full object-cover border-4 border-blue-500 mb-6"
                   />
                   <h3
                     className="text-2xl font-bold text-gray-800 mb-2"
@@ -93,7 +93,7 @@ function Testimonials() {
                     {testimonial.name}
                   </h3>
                   <p
-                    className="text-sm font-medium text-gray-600 mb-4"
+                    className="text-sm font-medium text-blue-500 mb-4"
                     data-aos="fade-left"
                   >
                     {testimonial.location}
@@ -110,7 +110,11 @@ function Testimonials() {
           </div>
         </div>
       </div>
-      <Footer />
+
+
+
+      
+      </App_layout>
     </div>
   );
 }

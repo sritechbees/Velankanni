@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 import { useRouter } from "next/router";
 
+
 function Header() {
   const router = useRouter();
 
@@ -20,7 +21,7 @@ function Header() {
               alt="logo"
               height={200}
               width={200}
-              className="h-24 w-32  ml-16 bg-white hover:bg-blue-600"
+              className="h-24 w-32  ml-16 rounded-2xl bg-white hover:bg-blue-600"
             />
              </Link>
           </div>
@@ -64,6 +65,7 @@ function Header() {
           </Link>
         </div>
       </div>
+   
     </div>
   );
 }

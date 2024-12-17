@@ -1,13 +1,13 @@
-import Swipper from '@/component/home/layout/common/swiper'
-import Footer from '@/component/home/layout/footer'
-import Header from '@/component/home/layout/header'
-import React from 'react'
+  import Swipper from '@/component/home/layout/common/swiper'
+  import App_layout from '@/component/home/layout/layout/App-layout'
+  import React from 'react'
 
 function Home() {
   return (
-    <div className=''>
-      <Header/>
-      <Swipper/>
+
+<App_layout>
+  
+<Swipper/>
 <div>
       <div
       data-aos="fade-right"
@@ -30,10 +30,8 @@ function Home() {
         Get a Quote
       </button>
     </div>
-
     </div>
-      <Footer/>
-    </div>
+</App_layout>
   )
 }
 

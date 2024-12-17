@@ -1,107 +1,123 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
-import Header from "@/component/home/layout/header";
+import AOS from "aos"; // Import AOS
+import "aos/dist/aos.css"; // Import AOS styles
+import Link from "next/link";
+import App_layout from "@/component/home/layout/layout/App-layout";
 
-const ServiceCards = () => {
-  const [currentCard, setCurrentCard] = useState(0);
+const ServicesSection = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true }); // Initialize AOS
+  }, []);
 
   const services = [
-    {
-      title: "Household Relocation",
-      description: "Safe and secure packing and moving for all your household items.",
-      image: "/image/Household Relocation.jpg", // Add appropriate image paths
-    },
-    {
-      title: "Office Relocation",
-      description: "Efficient and reliable office moving services tailored to your needs.",
-      image: "/image/Office Relocation.jpg",
-    },
-    {
-      title: "Car Transportation",
-      description: "Hassle-free car transportation with utmost care and professionalism.",
-      image: "/image/Car Transportation.jpg",
-    },
-    {
-      title: "Warehouse Storage",
-      description: "Spacious and secure storage solutions for your belongings.",
-      image: "/image/Warehouse Storage.jpg",
-    },
-    {
-      title: "International Moving",
-      description: "Expert assistance for seamless international relocations.",
-      image: "/image/International Moving.jpg",
-    },
-    {
-      title: "Packing Services",
-      description: "High-quality packing materials to ensure item safety.",
-      image: "/image/packing Services.jpg",
-    },
-    {
-      title: "Loading & Unloading",
-      description: "Skilled professionals for safe loading and unloading services.",
-      image: "/image/Loading & Unloading.jpg",
-    },
-    {
-      title: "Pet Relocation",
-      description: "Careful and compassionate relocation for your pets.",
-      image: "/image/Pet Relocation.jpg",
-    },
-    {
-      title: "Bike Transportation",
-      description: "Secure and timely transportation of bikes to any location.",
-      image: "/image/Bike.jpg",
-    },
+    { id: 1, title: "Home Relocation", description: "Efficient and secure home relocation services.", icon: "/image/Household Relocation.jpg" },
+    { id: 2, title: "Office Shifting", description: "Professional office relocation with minimal downtime.", icon: "/image/Office Relocation.jpg" },
+    { id: 3, title: "Packing Services", description: "Top-notch packing solutions for all your belongings.", icon: "/image/packing Services.jpg" },
+    { id: 4, title: "Loading & Unloading", description: "Safe and hassle-free loading and unloading services.", icon: "/image/Loading & Unloading.jpg" },
+    { id: 5, title: "Car Transport", description: "Seamless transportation of your vehicles.", icon: "/image/Car Transportation.jpg" },
+    { id: 6, title: "Warehouse Storage", description: "Secure storage facilities for your items.", icon: "/image/Warehouse Storage.jpg" },
+    { id: 7, title: "International Relocation", description: "Global relocation solutions tailored to your needs.", icon: "/image/International Moving.jpg" },
+    { id: 8, title: "Bike Transportation", description: "Secure and timely transportation of bikes to any location.", icon: "/image/Bike.jpg" },
+    { id: 9, title: "Pet Relocation", description: "Safe and comfortable relocation for your pets.", icon: "/image/Pet Relocation.jpg" },
   ];
 
-
-  const handleNext = () => {
-    setCurrentCard((prev) => (prev + 1) % services.length);
-  };
-
-  const handlePrev = () => {
-    setCurrentCard((prev) => (prev - 1 + services.length) % services.length);
-  };
-
   return (
-    <div className="bg-gray-100 mt-20">
-      <Header/>
-      <div className="max-w-5xl mx-auto px-4 text-center">
-        <h2 className="text-3xl font-bold text-gray-800 mb-8">Our Services</h2>
-        <div className="relative bg-white shadow-lg rounded-lg p-6 max-w-md mx-auto">
-          {/* Current Service Card */}
-          <div>
-            <Image
-              src={services[currentCard].image}
-              alt={services[currentCard].title}
-              width={300}
-              height={350}
-              className="mx-auto mb-4 rounded-full"
-            />
-            <h3 className="text-2xl font-semibold text-gray-800 mb-2">
-              {services[currentCard].title}
-            </h3>
-            <p className="text-gray-600">{services[currentCard].description}</p>
+    <div>
+      <App_layout>
+      <div className="relative bg-gray-100 mt-28">
+        {/* Hero Section */}
+        <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between px-4 lg:px-8 py-20">
+          {/* Text Section */}
+          <div
+            className="bg-white p-8 rounded-lg shadow-lg lg:max-w-md"
+            data-aos="fade-right"
+          >
+            <h1 className="text-4xl font-bold text-blue-700 mb-4">
+              Quick And Secure Move Is Our Promise
+            </h1>
+            <p className="text-gray-600 mb-6">
+              Get your move where you need it. Use Velankanni Packers and Movers.
+            </p>
+            <Link href="/login">
+              <button className="bg-blue-500 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-600 transition-transform transform hover:scale-105">
+                ORDER MOVING ➡
+              </button>
+            </Link>
           </div>
 
-          {/* Navigation Buttons */}
-          <div className="flex justify-between mt-6">
-            <button
-              onClick={handlePrev}
-              className="px-4 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400"
-            >
-              Previous
-            </button>
-            <button
-              onClick={handleNext}
-              className="px-4 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400"
-            >
-              Next
-            </button>
+          {/* Image Section */}
+          <div
+            className="mt-10 lg:mt-0 lg:ml-8"
+            data-aos="fade-left"
+          >
+            <Image
+              src="/image/packk1.jpg" // Replace with the correct image path
+              alt="Packers and Movers"
+              width={600}
+              height={400}
+              className="rounded-lg shadow-lg"
+            />
+          </div>
+        </div>
+
+        {/* Contact Information Section */}
+        <div
+          className="bg-blue-700 text-white flex flex-col lg:flex-row items-center justify-between py-4 px-4 lg:px-8"
+          data-aos="fade-up"
+        >
+          <div className="mb-4 lg:mb-0">
+            <p>
+              Email Us Now:{" "}
+              <a
+                href="mailto:velankannipackersandmovers@gmail.com"
+                className="underline"
+              >
+                velankannipackersandmovers@gmail.com
+              </a>
+            </p>
+          </div>
+          <div>
+            <p>Open Hours: Monday-Saturday 10am to 6pm, Sunday Closed</p>
+          </div>
+        </div>
+
+        {/* Services Section */}
+        <div className="container mx-auto py-16 px-4 lg:px-8">
+          <h2
+            className="text-3xl font-bold text-center text-blue-700 mb-8"
+            data-aos="fade-up"
+          >
+            Our Services
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service) => (
+              <div
+                key={service.id}
+                className="p-6 bg-white rounded-lg shadow-lg hover:shadow-2xl transition-all transform hover:scale-105"
+                data-aos="zoom-in"
+              >
+                <div className="flex items-center justify-center mb-4">
+                  <Image
+                    src={service.icon}
+                    alt={service.title}
+                    width={250}
+                    height={250}
+                    className="transform hover:scale-110 transition-all"
+                  />
+                </div>
+                <h3 className="text-xl text-center font-semibold text-blue-700 mb-2">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600 text-center">{service.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
+      </App_layout>
     </div>
   );
 };
 
-export default ServiceCards;
+export default ServicesSection;
