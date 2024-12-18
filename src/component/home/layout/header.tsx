@@ -29,7 +29,7 @@ function Header() {
 
           {/* Navigation Section */}
           <nav>
-            <ul className="flex ml-96 text-white space-x-6 text-gray-700">
+            <ul className="flex ml-[350px] text-white space-x-6 text-gray-700">
               {[
                 { name: "Home", href: "/home" },
                 { name: "About Us", href: "/about" },

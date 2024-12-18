@@ -56,7 +56,7 @@ const PlanCard: React.FC<PlanCardProps> = ({ title, description, features, onCli
     <h4 className={`text-xl font-semibold mb-4 ${selected ? 'hover:bg-blue-600 hover:text-white py-1 px-2 rounded' : ''}`}>
       {title}
     </h4>
-    <p className="text-gray-600 mb-4">{description}</p>
+    <p className="text-gray-700 mb-4  ">{description}</p>
     <ul className="list-disc pl-5 mb-4">
       {features.map((feature, index) => (
         <li key={index}>{feature}</li>

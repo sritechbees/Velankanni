@@ -156,6 +156,9 @@ function Footer() {
         <hr className="border-t border-gray-300 mb-4" />
         <p>&copy; 2024 Velankanni Packers and Movers. All Rights Reserved.</p>
       </div>
+
+
+      
     </div>
   );
 }

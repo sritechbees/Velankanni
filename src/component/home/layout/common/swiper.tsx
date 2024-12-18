@@ -9,11 +9,38 @@ import "swiper/css/pagination";
 
 // Import required modules
 import { Autoplay, FreeMode, Pagination } from "swiper/modules";
-import Image from "next/image";
+
+const services = [
+  {
+    title: "Residential Moving",
+    description: "Safe and secure home relocation services.",
+    icon: "🏠",
+  },
+  {
+    title: "Office Moving",
+    description: "Efficient office moves with minimal downtime.",
+    icon: "🏢",
+  },
+  {
+    title: "Vehicle Transport",
+    description: "Reliable car and bike transportation.",
+    icon: "🚗",
+  },
+  {
+    title: "Storage Services",
+    description: "Short-term and long-term storage options.",
+    icon: "📦",
+  },
+];
 
 function Swipper() {
   return (
     <div>
+
+           <section className="py-16 bg-gray-50">
+      <div className="container mx-auto text-center">
+        <h2 className="text-3xl font-bold mb-8">Our Specialized Services</h2>
+       
       <Swiper
         slidesPerView={1}
         spaceBetween={30}
@@ -25,128 +52,24 @@ function Swipper() {
           clickable: true,
         }}
         modules={[FreeMode, Pagination, Autoplay]}
-        className="mySwiper h-screen w-full max-md:h-64"
+        className="mySwiper mt-32 w-full max-md:h-64"
       >
-        {/* Existing 6 Slides */}
-        <SwiperSlide>
-          {/* Slide Content */}
-        </SwiperSlide>
-        {/* ... Add the previous 6 slides here */}
-        
-        {/* Slide 7: Industrial Relocation */}
-        <SwiperSlide>
-          <div className="relative h-screen mt-32 w-full">
-            <Image
-              className="rounded-lg object-cover w-full h-full"
-              src="/image/Industrial Relocation.jpg"
-              width={1300}
-              height={0}
-              alt="Industrial Relocation"
-            />
-            <div className="absolute inset-0 flex flex-col justify-center items-center bg-black/40 text-white p-4">
-              <h2 className="text-4xl font-bold mb-2">Industrial Relocation</h2>
-              <p className="text-lg text-center max-w-xl">
-                Specialized industrial relocation services for heavy equipment and machinery.
-              </p>
-            </div>
-          </div>
-        </SwiperSlide>
-
-        {/* Slide 8: Packing Services */}
-        <SwiperSlide>
-          <div className="relative h-screen mt-32 w-full">
-            <Image
-              className="rounded-lg object-cover w-full h-full"
-              src="/image/Packing Services.jpg"
-              width={1300}
-              height={0}
-              alt="Packing Services"
-            />
-            <div className="absolute inset-0 flex flex-col justify-center items-center bg-black/40 text-white p-4">
-              <h2 className="text-4xl font-bold mb-2">Packing Services</h2>
-              <p className="text-lg text-center max-w-xl">
-                High-quality packing materials to ensure the safety of your belongings.
-              </p>
-            </div>
-          </div>
-        </SwiperSlide>
-
-        {/* Slide 9: Insurance Services */}
-        <SwiperSlide>
-          <div className="relative h-screen mt-32 w-full">
-            <Image
-              className="rounded-lg object-cover w-full h-full"
-              src="/image/Insurance Services.jpg"
-              width={1300}
-              height={0}
-              alt="Insurance Services"
-            />
-            <div className="absolute inset-0 flex flex-col justify-center items-center bg-black/40 text-white p-4">
-              <h2 className="text-4xl font-bold mb-2">Insurance Services</h2>
-              <p className="text-lg text-center max-w-xl">
-                Comprehensive insurance options to safeguard your move.
-              </p>
-            </div>
-          </div>
-        </SwiperSlide>
-
-        {/* Slide 10: Domestic Moving */}
-        <SwiperSlide>
-          <div className="relative h-screen mt-32 w-full">
-            <Image
-              className="rounded-lg object-cover w-full h-full"
-              src="/image/Domestic Moving.jpg"
-              width={1300}
-              height={0}
-              alt="Domestic Moving"
-            />
-            <div className="absolute inset-0 flex flex-col justify-center items-center bg-black/40 text-white p-4">
-              <h2 className="text-4xl font-bold mb-2">Domestic Moving</h2>
-              <p className="text-lg text-center max-w-xl">
-                Efficient and reliable services for domestic relocations.
-              </p>
-            </div>
-          </div>
-        </SwiperSlide>
-
-        {/* Slide 11: Pet Relocation */}
-        <SwiperSlide>
-          <div className="relative h-screen mt-32 w-full">
-            <Image
-              className="rounded-lg object-cover w-full h-full"
-              src="/image/Pet Relocation.jpg"
-              width={1300}
-              height={0}
-              alt="Pet Relocation"
-            />
-            <div className="absolute inset-0 flex flex-col justify-center items-center bg-black/40 text-white p-4">
-              <h2 className="text-4xl font-bold mb-2">Pet Relocation</h2>
-              <p className="text-lg text-center max-w-xl">
-                Hassle-free and safe relocation services for your beloved pets.
-              </p>
-            </div>
-          </div>
-        </SwiperSlide>
-
-        {/* Slide 12: Furniture Installation */}
-        <SwiperSlide>
-          <div className="relative h-screen mt-32 w-full">
-            <Image
-              className="rounded-lg object-cover w-full h-full"
-              src="/image/Furniture Installation.jpg"
-              width={1300}
-              height={0}
-              alt="Furniture Installation"
-            />
-            <div className="absolute inset-0 flex flex-col justify-center items-center bg-black/40 text-white p-4">
-              <h2 className="text-4xl font-bold mb-2">Furniture Installation</h2>
-              <p className="text-lg text-center max-w-xl">
-                Professional furniture assembly and installation services.
-              </p>
-            </div>
-          </div>
-        </SwiperSlide>
+      
+       
+      {services.map((service, index) => (
+            <SwiperSlide key={index}>
+              <div className="bg-white shadow-lg rounded-lg p-8 text-center">
+                <div className="text-6xl mb-4">{service.icon}</div>
+                <h3 className="text-xl font-bold mb-2">{service.title}</h3>
+                <p className="text-gray-600">{service.description}</p>
+              </div>
+            </SwiperSlide>
+          ))}
+       
       </Swiper>
+      </div>
+      </section>
+
     </div>
   );
 }

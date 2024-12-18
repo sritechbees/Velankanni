@@ -1,5 +1,10 @@
-  import Swipper from '@/component/home/layout/common/swiper'
-  import App_layout from '@/component/home/layout/layout/App-layout'
+
+import App_layout from '@/component/home/layout/layout/App-layout'
+import HeroSection from '@/component/home/layout/layout/HeroSection'
+import Packers from '@/component/home/layout/layout/packers'
+import ServiceAreas from '@/component/home/layout/layout/ServiceAreas'
+import ServicesSwiper from '@/component/home/layout/layout/ServicesSwiper'
+import WhyChooseUs from '@/component/home/layout/layout/WhyChooseUs'
   import React from 'react'
 
 function Home() {
@@ -7,31 +12,18 @@ function Home() {
 
 <App_layout>
   
-<Swipper/>
+
 <div>
-      <div
-      data-aos="fade-right"
-      data-aos-offset="100"
-      data-aos-delay="50"
-      data-aos-duration="1000"
-      data-aos-mirror="true" className=" space-y-6 mb-20">
-        
-      <h1 
-          data-aos-delay="100" className="text-3xl font-bold" data-aos="fade-up">
-        Velankanni Packers and Movers
-      </h1>
-      <p className="text-lg" data-aos="fade-right"> 
-        We provide reliable moving services tailored to your needs.
-      </p>
-      <button
-        className="px-4 py-2 bg-blue-600 text-white rounded"
-        data-aos="zoom-in"
-      >
-        Get a Quote
-      </button>
-    </div>
-    </div>
+  <HeroSection/>  
+  <ServicesSwiper/>
+  <WhyChooseUs/>
+  <Packers/>
+  <ServiceAreas/>
+
+</div>
 </App_layout>
+
+
   )
 }
 
