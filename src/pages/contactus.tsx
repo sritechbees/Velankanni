@@ -34,7 +34,7 @@ export default function ContactUs() {
     {/* Left Side (Image Section) */}
     <div className="w-full md:w-1/2">
       <Image
-        src="/about/contactt.png"
+        src="/about/contactimage.png"
         height={200} 
         width={200}
         alt="Velankanni Packers and Movers"

@@ -6,12 +6,12 @@ export default function WhyChooseUs() {
     {
       title: "Experienced Professionals",
       description: "We have skilled movers to handle your belongings.",
-      image: "/about/Experienced Professionals.png", // Replace with the correct image path
+      image: "/about/Experiencedd Professionals.png", // Replace with the correct image path
     },
     {
       title: "Cost-Effective Solutions",
       description: "Transparent pricing with no hidden charges.",
-      image: "/about/download.png", // Replace with the correct image path
+      image: "/about/Affordable Rates.png", // Replace with the correct image path
     },
     {
       title: "Fast & Secure Services",

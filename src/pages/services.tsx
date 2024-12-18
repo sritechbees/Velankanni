@@ -13,7 +13,7 @@ const ServicesSection = () => {
   const services = [
     { id: 1, title: "Home Relocation", description: "Efficient and secure home relocation services.", icon: "/image/Household Relocation.jpg" },
     { id: 2, title: "Office Shifting", description: "Professional office relocation with minimal downtime.", icon: "/image/Office Relocation.jpg" },
-    { id: 3, title: "Packing Services", description: "Top-notch packing solutions for all your belongings.", icon: "/image/packing Services.jpg" },
+    { id: 3, title: "Packing Services", description: "Top-notch packing solutions for all your belongings.", icon: "/image/Packing Services.jpg" },
     { id: 4, title: "Loading & Unloading", description: "Safe and hassle-free loading and unloading services.", icon: "/image/Loading & Unloading.jpg" },
     { id: 5, title: "Car Transport", description: "Seamless transportation of your vehicles.", icon: "/image/Car Transportation.jpg" },
     { id: 6, title: "Warehouse Storage", description: "Secure storage facilities for your items.", icon: "/image/Warehouse Storage.jpg" },
