@@ -47,7 +47,7 @@ function Testimonials() {
       feedback:
         "They were incredibly professional and ensured all my items were delivered safely. Great job",
       location: "Trichy",
-      image: "/about/Arya.png",
+      image: "/about/arya.png",
     },
     {
       name: "Suganthi",
